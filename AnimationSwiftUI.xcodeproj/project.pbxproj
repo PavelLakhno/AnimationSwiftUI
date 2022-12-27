@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CE0F85AD295B404400CB04E4 /* GradientRectangles.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0F85AC295B404400CB04E4 /* GradientRectangles.swift */; };
 		CE6F94C72959C6E2001B5CFC /* AnimationSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6F94C62959C6E2001B5CFC /* AnimationSwiftUIApp.swift */; };
 		CE6F94C92959C6E2001B5CFC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6F94C82959C6E2001B5CFC /* ContentView.swift */; };
 		CE6F94CB2959C6E4001B5CFC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE6F94CA2959C6E4001B5CFC /* Assets.xcassets */; };
@@ -15,7 +14,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CE0F85AC295B404400CB04E4 /* GradientRectangles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientRectangles.swift; sourceTree = "<group>"; };
 		CE6F94C32959C6E2001B5CFC /* AnimationSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnimationSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE6F94C62959C6E2001B5CFC /* AnimationSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationSwiftUIApp.swift; sourceTree = "<group>"; };
 		CE6F94C82959C6E2001B5CFC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -57,7 +55,6 @@
 				CE6F94C82959C6E2001B5CFC /* ContentView.swift */,
 				CE6F94CA2959C6E4001B5CFC /* Assets.xcassets */,
 				CE6F94CC2959C6E4001B5CFC /* Preview Content */,
-				CE0F85AC295B404400CB04E4 /* GradientRectangles.swift */,
 			);
 			path = AnimationSwiftUI;
 			sourceTree = "<group>";
@@ -142,7 +139,6 @@
 			files = (
 				CE6F94C92959C6E2001B5CFC /* ContentView.swift in Sources */,
 				CE6F94C72959C6E2001B5CFC /* AnimationSwiftUIApp.swift in Sources */,
-				CE0F85AD295B404400CB04E4 /* GradientRectangles.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

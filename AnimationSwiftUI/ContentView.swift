@@ -8,18 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var moveOnCircle = false
+    @State private var moveByCircle = false
     @State private var offsetY: CGFloat = -150
     @State private var degrees: Double = 0.5
-    @State private var scale: Double = 0.2
+    @State private var scale: Double = 0
+    @State private var hatOffsetY: CGFloat = -UIScreen.main.bounds.maxY
     
     var body: some View {
-        
         
         ZStack {
             Color.blue.ignoresSafeArea()
                 
-            RoundedRectangle(cornerRadius: 30, style: .circular)
+            RoundedRectangle(cornerRadius: 30)
                 .fill(
                     LinearGradient(
                         colors: [.orange, .red],
@@ -27,37 +27,49 @@ struct ContentView: View {
                         endPoint: UnitPoint(x: 0.5, y: 1)
                     )
                 )
-                .frame(width: 300, height: 300)
-                .shadow(color: .white, radius: 2, x: 5, y: 5)
+                .frame(width: 200, height: 200)
+                .shadow(color: Color.white.opacity(0.5), radius: 2, x: 5, y: 5)
                 .scaleEffect(scale)
-                
+                .rotationEffect(.degrees(degrees))
             
             Image("SwiftImage")
                 .resizable()
                 .frame(width: 100, height: 100)
                 .font(.largeTitle)
                 .foregroundColor(.blue)
-                .offset(y: moveOnCircle ? 0 : -300)
-                .rotationEffect(.degrees(moveOnCircle ? 0 : -360))
-                .scaleEffect(moveOnCircle ? 2 : 0.3)
-                .animation(.linear(duration: 2), value: moveOnCircle)
+                .offset(y: moveByCircle ? 0 : -300)
+                .rotationEffect(.degrees(moveByCircle ? 0 : -360))
+                .scaleEffect(moveByCircle ? 1.5 : 0.3)
+                .animation(.linear(duration: 2), value: moveByCircle)
             
+            HStack {
+                Spacer()
+                Image("SantaHat")
+                    .resizable()
+                    .frame(width: 200, height: 150)
+                    .rotationEffect(.degrees(45))
+                    .offset(y: hatOffsetY)
+            }
+            .padding()
         }
+        
         .onAppear() {
-            self.moveOnCircle.toggle()
+            moveByCircle.toggle()
             
-            withAnimation(.easeIn(duration: 0.2).delay(1.7)) {
-                self.degrees += 10
-                self.scale = 0.85
-            }
-            
-            withAnimation(.linear(duration: 0.2).delay(1.9)) {
-                self.degrees = 0
-                self.scale = 1
+            withAnimation(.linear(duration: 1).delay(1.5)) {
+                degrees += 180
+                scale = 0.5
             }
 
+            withAnimation(.linear(duration: 0.5).delay(1.5)) {
+                degrees = 0
+                scale = 1
+            }
+            
+            withAnimation(.linear(duration: 0.5).delay(2)) {
+                hatOffsetY = -60
+            }
         }
-
     }
 }
     
