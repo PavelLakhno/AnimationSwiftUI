@@ -32,8 +32,8 @@ struct ContentView: View {
                 .scaleEffect(scale)
                 .rotationEffect(.degrees(degrees))
             
-            Image("SwiftImage")
-                .resizable()
+            SwiftImage()
+                .foregroundColor(.white)
                 .frame(width: 100, height: 100)
                 .font(.largeTitle)
                 .foregroundColor(.blue)
